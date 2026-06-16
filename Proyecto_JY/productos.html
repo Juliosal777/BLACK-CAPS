@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Caps | Catálogo</title>
+    <link rel="stylesheet" href="estilos.css">
+    <style>
+        dialog {
+            border: 1px solid #111;
+            padding: 30px;
+            width: 90%;
+            max-width: 450px;
+            margin: auto;
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        dialog::backdrop {
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(2px);
+        }
+        .btn-comprar, .btn-modal {
+            background-color: #111;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            width: 100%;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+        .btn-comprar:hover, .btn-modal:hover {
+            background-color: #333;
+        }
+        .btn-cerrar {
+            background: none;
+            border: none;
+            color: #888;
+            font-size: 12px;
+            text-transform: uppercase;
+            cursor: pointer;
+            display: block;
+            margin: 15px auto 0 auto;
+        }
+        .form-grupo {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .form-grupo label {
+            display: block;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        .form-grupo input, .form-grupo select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo-container">
+                <h1>BLACK CAPS</h1>
+                <p>Identidad en cada silueta</p>
+            </div>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Catálogo</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h3>Catálogo Esencial</h3>
+        
+        <div class="grid-productos">
+            
+            <div class="producto-card">
+                <img src="ONYX.png" alt="Gorra AURA Onyx" class="producto-img">
+                <h4>BLACK Onyx (Snapback)</h4>
+                <p>Color negro mate profundo en algodón cepillado.</p>
+                <p class="precio">$399.00 MXN</p>
+                <button class="btn-comprar" onclick="document.getElementById('modal-talla-1').showModal()">Seleccionar Opciones</button>
+            </div>
+
+            
+            <div class="producto-card">
+                <img src="BLACK.png" alt="Gorra AURA Ash" class="producto-img">
+                <h4>BLACK Ash (Dad Hat)</h4>
+                <p>Color negro mate profundo en algodón cepillado.</p>
+                <p class="precio">$349.00 MXN</p>
+                <button class="btn-comprar" onclick="document.getElementById('modal-talla-2').showModal()">Seleccionar Opciones</button>
+            </div>
+
+            
+            <div class="producto-card">
+                <img src="OLIVE.png" alt="Gorra AURA Olive" class="producto-img">
+                <h4>BLACK Olive (Trucker)</h4>
+                <p>Color negro mate profundo en algodón cepillado.</p>
+                <p class="precio">$379.00 MXN</p>
+                <button class="btn-comprar" onclick="document.getElementById('modal-talla-3').showModal()">Seleccionar Opciones</button>
+            </div>
+
+            
+            <div class="producto-card">
+                <img src="YVORY.png" alt="Gorra AURA Ivory" class="producto-img">
+                <h4>BLACK Ivory (Retro)</h4>
+                <p>Color negro mate profundo en algodón cepillado.</p>
+                <p class="precio">$389.00 MXN</p>
+                <button class="btn-comprar" onclick="document.getElementById('modal-talla-4').showModal()">Seleccionar Opciones</button>
+            </div>
+
+            
+            <div class="producto-card">
+                <img src="SAND.png" alt="Gorra AURA Sand" class="producto-img">
+                <h4>BLACK Sand (Minimal)</h4>
+                <p>Color negro mate profundo en algodón cepillado.</p>
+                <p class="precio">$360.00 MXN</p>
+                <button class="btn-comprar" onclick="document.getElementById('modal-talla-5').showModal()">Seleccionar Opciones</button>
+            </div>
+
+            
+            <div class="producto-card">
+                <img src="CRIMSON.png" alt="Gorra AURA Crimson" class="producto-img">
+                <h4>BLACK Crimson (Sport)</h4>
+                <p>Color negro mate profundo en algodón cepillado..</p>
+                <p class="precio">$410.00 MXN</p>
+                <button class="btn-comprar" onclick="document.getElementById('modal-talla-6').showModal()">Seleccionar Opciones</button>
+            </div>
+        </div>
+    </div>
+    <dialog id="modal-talla-1">
+        <h4 style="text-align: center; margin-bottom:15px;">Configurar Producto</h4>
+        <form method="dialog">
+            <div class="form-grupo"><label>Talla:</label><select><option>Unitalla (Ajustable)</option><option>S-M</option><option>L-XL</option></select></div>
+            <button type="submit" class="btn-modal" onclick="setTimeout(() => document.getElementById('modal-pago-1').showModal(), 50)">Proceder a la Compra</button>
+            <button type="button" class="btn-cerrar" onclick="this.closest('dialog').close()">Salir / Cancelar</button>
+        </form>
+    </dialog>
+    <dialog id="modal-pago-1">
+        <h4 style="text-align: center; margin-bottom:15px;">Método de Pago</h4>
+        <form method="dialog">
+            <div class="form-grupo"><label>Número de Tarjeta</label><input type="text" placeholder="0000 0000 0000 0000" required></div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;"><div class="form-grupo"><label>Expiración</label><input type="text" placeholder="MM/AA" required></div><div class="form-grupo"><label>CVV</label><input type="password" placeholder="123" required></div></div>
+            <button type="submit" class="btn-modal" onclick="setTimeout(() => document.getElementById('modal-envio-1').showModal(), 50)">Siguiente: Envío</button>
+            <button type="button" class="btn-cerrar" onclick="this.closest('dialog').close()">Salir / Cancelar</button>
+        </form>
+    </dialog>
+    <dialog id="modal-envio-1">
+        <h4 style="text-align: center; margin-bottom:15px;">Datos de Envío</h4>
+        <form method="dialog">
+            <div class="form-grupo"><label>Nombre Completo</label><input type="text" required></div><div class="form-grupo"><label>Calle y Número</label><input type="text" required></div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;"><div class="form-grupo"><label>Código Postal</label><input type="text" required></div><div class="form-grupo"><label>Ciudad</label><input type="text" required></div></div>
+            <button type="submit" class="btn-modal" onclick="setTimeout(() => document.getElementById('modal-exito-1').showModal(), 50)">Finalizar Compra</button>
+            <button type="button" class="btn-cerrar" onclick="this.closest('dialog').close()">Salir / Cancelar</button>
+        </form>
+    </dialog>
+    <dialog id="modal-exito-1"><div style="text-align: center;"><span style="font-size: 40px; color: #27ae60;">✓</span><h4>¡Compra Realizada!</h4><p style="font-size:14px; color:#666; margin-bottom:10px;">Tu orden fue procesada.</p><form method="dialog"><button class="btn-modal" style="background-color: #27ae60;">Aceptar y Salir</button></form></div></dialog>
+
+    <dialog id="modal-talla-2">
+        <h4 style="text-align: center; margin-bottom:15px;">Configurar Producto</h4>
+        <form method="dialog">
+            <div class="form-grupo"><label>Talla:</label><select><option>Unitalla (Ajustable)</option></select></div>
+            <button type="submit" class="btn-modal" onclick="setTimeout(() => document.getElementById('modal-pago-2').showModal(), 50)">Proceder a la Compra</button>
+            <button type="button" class="btn-cerrar" onclick="this.closest('dialog').close()">Salir / Cancelar</button>
+        </form>
+    </dialog>
+    <dialog id="modal-pago-2">
+        <h4 style="text-align: center; margin-bottom:15px;">Método de Pago</h4>
+        <form method="dialog">
+            <div class="form-grupo"><label>Número de Tarjeta</label><input type="text" placeholder="0000 0000 0000 0000" required></div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;"><div class="form-grupo"><label>Expiración</label><input type="text" placeholder="MM/AA" required></div><div class="form-grupo"><label>CVV</label><input type="password" placeholder="123" required></div></div>
+            <button type="submit" class="btn-modal" onclick="setTimeout(() => document.getElementById('modal-envio-2').showModal(), 50)">Siguiente: Envío</button>
+            <button type="button" class="btn-cerrar" onclick="this.closest('dialog').close()">Salir / Cancelar</button>
+        </form>
+    </dialog>
+    <dialog id="modal-envio-2">
+        <h4 style="text-align: center; margin-bottom:15px;">Datos de Envío</h4>
+        <form method="dialog">
+            <div class="form-grupo"><label>Nombre Completo</label><input type="text" required></div><div class="form-grupo"><label>Calle y Número</label><input type="text" required></div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;"><div class="form-grupo"><label>Código Postal</label><input type="text" required></div><div class="form-grupo"><label>Ciudad</label><input type="text" required></div></div>
+            <button type="submit" class="btn-modal" onclick="setTimeout(() => document.getElementById('modal-exito-2').showModal(), 50)">Finalizar Compra</button>
+            <button type="button" class="btn-cerrar" onclick="this.closest('dialog').close()">Salir / Cancelar</button>
+        </form>
+    </dialog>
+    <dialog id="modal-exito-2"><div style="text-align: center;"><span style="font-size: 40px; color: #27ae60;">✓</span><h4>¡Compra Realizada!</h4><p style="font-size:14px; color:#666; margin-bottom:10px;">Tu orden fue procesada.</p><form method="dialog"><button class="btn-modal" style="background-color: #27ae60;">Aceptar y Salir</button></form></div></dialog>
+
+    <dialog id="modal-talla-3">
+        <h4 style="text-align: center; margin-bottom:15px;">Configurar Producto</h4>
+        <form method="dialog">
+            <div class="form-grupo"><label>Talla:</label><select><option>Unitalla (Ajustable)</option></select></div>
+            <button type="submit" class="btn-modal" onclick="setTimeout(() => document.getElementById('modal-pago-3').showModal(), 50)">Proceder a la Compra</button>
+            <button type="button" class="btn-cerrar" onclick="this.closest('dialog').close()">Salir / Cancelar</button>
+        </form>
+    </dialog>
+    <dialog id="modal-pago-3">
+        <h4 style="text-align: center; margin-bottom:15px;">Método de Pago</h4>
+        <form method="dialog">
+            <div class="form-grupo"><label>Número de Tarjeta</label><input type="text" placeholder="0000 0000 0000 0000" required></div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;"><div class="form-grupo"><label>Expiración</label><input type="text" placeholder="MM/AA" required></div><div class="form-grupo"><label>CVV</label><input type="password" placeholder="123" required></div></div>
+            <button type="submit" class="btn-modal" onclick="setTimeout(() => document.getElementById('modal-envio-3').showModal(), 50)">Siguiente: Envío</button>
+            <button type="button" class="btn-cerrar" onclick="this.closest('dialog').close()">Salir / Cancelar</button>
+        </form>
+    </dialog>
+    <dialog id="modal-envio-3">
+        <h4 style="text-align: center; margin-bottom:15px;">Datos de Envío</h4>
+        <form method="dialog">
+            <div class="form-grupo"><label>Nombre Completo</label><input type="text" required></div><div class="form-grupo"><label>Calle y Número</label><input type="text" required></div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;"><div class="form-grupo"><label>Código Postal</label><input type="text" required></div><div class="form-grupo"><label>Ciudad</label><input type="text" required></div></div>
+            <button type="submit" class="btn-modal" onclick="setTimeout(() => document.getElementById('modal-exito-3').showModal(), 50)">Finalizar Compra</button>
+            <button type="button" class="btn-cerrar" onclick="this.closest('dialog').close()">Salir / Cancelar</button>
+        </form>
+    </dialog>
+    <dialog id="modal-exito-3"><div style="text-align: center;"><span style="font-size: 40px; color: #27ae60;">✓</span><h4>¡Compra Realizada!</h4><p style="font-size:14px; color:#666; margin-bottom:10px;">Tu orden fue procesada.</p><form method="dialog"><button class="btn-modal" style="background-color: #27ae60;">Aceptar y Salir</button></form></div></dialog>
+
+    <dialog id="modal-talla-4">
+        <h4 style="text-align: center; margin-bottom:15px;">Configurar Producto</h4>
+        <form method="dialog">
+            <div class="form-grupo"><label>Talla:</label><select><option>Unitalla (Ajustable)</option></select></div>
+            <button type="submit" class="btn-modal" onclick="setTimeout(() => document.getElementById('modal-pago-4').showModal(), 50)">Proceder a la Compra</button>
+            <button type="button" class="btn-cerrar" onclick="this.closest('dialog').close()">Salir / Cancelar</button>
+        </form>
+    </dialog>
+    <dialog id="modal-pago-4">
+        <h4 style="text-align: center; margin-bottom:15px;">Método de Pago</h4>
+        <form method="dialog">
+            <div class="form-grupo"><label>Número de Tarjeta</label><input type="text" placeholder="0000 0000 0000 0000" required></div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;"><div class="form-grupo"><label>Expiración</label><input type="text" placeholder="MM/AA" required></div><div class="form-grupo"><label>CVV</label><input type="password" placeholder="123" required></div></div>
+            <button type="submit" class="btn-modal" onclick="setTimeout(() => document.getElementById('modal-envio-4').showModal(), 50)">Siguiente: Envío</button>
+            <button type="button" class="btn-cerrar" onclick="this.closest('dialog').close()">Salir / Cancelar</button>
+        </form>
+    </dialog>
+    <dialog id="modal-envio-4">
+        <h4 style="text-align: center; margin-bottom:15px;">Datos de Envío</h4>
+        <form method="dialog">
+            <div class="form-grupo"><label>Nombre Completo</label><input type="text" required></div><div class="form-grupo"><label>Calle y Número</label><input type="text" required></div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;"><div class="form-grupo"><label>Código Postal</label><input type="text" required></div><div class="form-grupo"><label>Ciudad</label><input type="text" required></div></div>
+            <button type="submit" class="btn-modal" onclick="setTimeout(() => document.getElementById('modal-exito-4').showModal(), 50)">Finalizar Compra</button>
+            <button type="button" class="btn-cerrar" onclick="this.closest('dialog').close()">Salir / Cancelar</button>
+        </form>
+    </dialog>
+    <dialog id="modal-exito-4"><div style="text-align: center;"><span style="font-size: 40px; color: #27ae60;">✓</span><h4>¡Compra Realizada!</h4><p style="font-size:14px; color:#666; margin-bottom:10px;">Tu orden fue procesada.</p><form method="dialog"><button class="btn-modal" style="background-color: #27ae60;">Aceptar y Salir</button></form></div></dialog>
+
+    <dialog id="modal-talla-5">
+        <h4 style="text-align: center; margin-bottom:15px;">Configurar Producto</h4>
+        <form method="dialog">
+            <div class="form-grupo"><label>Talla:</label><select><option>Unitalla (Ajustable)</option></select></div>
+            <button type="submit" class="btn-modal" onclick="setTimeout(() => document.getElementById('modal-pago-5').showModal(), 50)">Proceder a la Compra</button>
+            <button type="button" class="btn-cerrar" onclick="this.closest('dialog').close()">Salir / Cancelar</button>
+        </form>
+    </dialog>
+    <dialog id="modal-pago-5">
+        <h4 style="text-align: center; margin-bottom:15px;">Método de Pago</h4>
+        <form method="dialog">
+            <div class="form-grupo"><label>Número de Tarjeta</label><input type="text" placeholder="0000 0000 0000 0000" required></div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;"><div class="form-grupo"><label>Expiración</label><input type="text" placeholder="MM/AA" required></div><div class="form-grupo"><label>CVV</label><input type="password" placeholder="123" required></div></div>
+            <button type="submit" class="btn-modal" onclick="setTimeout(() => document.getElementById('modal-envio-5').showModal(), 50)">Siguiente: Envío</button>
+            <button type="button" class="btn-cerrar" onclick="this.closest('dialog').close()">Salir / Cancelar</button>
+        </form>
+    </dialog>
+    <dialog id="modal-envio-5">
+        <h4 style="text-align: center; margin-bottom:15px;">Datos de Envío</h4>
+        <form method="dialog">
+            <div class="form-grupo"><label>Nombre Completo</label><input type="text" required></div><div class="form-grupo"><label>Calle y Número</label><input type="text" required></div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;"><div class="form-grupo"><label>Código Postal</label><input type="text" required></div><div class="form-grupo"><label>Ciudad</label><input type="text" required></div></div>
+            <button type="submit" class="btn-modal" onclick="setTimeout(() => document.getElementById('modal-exito-5').showModal(), 50)">Finalizar Compra</button>
+            <button type="button" class="btn-cerrar" onclick="this.closest('dialog').close()">Salir / Cancelar</button>
+        </form>
+    </dialog>
+    <dialog id="modal-exito-5"><div style="text-align: center;"><span style="font-size: 40px; color: #27ae60;">✓</span><h4>¡Compra Realizada!</h4><p style="font-size:14px; color:#666; margin-bottom:10px;">Tu orden fue procesada.</p><form method="dialog"><button class="btn-modal" style="background-color: #27ae60;">Aceptar y Salir</button></form></div></dialog>
+
+    <dialog id="modal-talla-6">
+        <h4 style="text-align: center; margin-bottom:15px;">Configurar Producto</h4>
+        <form method="dialog">
+            <div class="form-grupo"><label>Talla:</label><select><option>Unitalla (Ajustable)</option></select></div>
+            <button type="submit" class="btn-modal" onclick="setTimeout(() => document.getElementById('modal-pago-6').showModal(), 50)">Proceder a la Compra</button>
+            <button type="button" class="btn-cerrar" onclick="this.closest('dialog').close()">Salir / Cancelar</button>
+        </form>
+    </dialog>
+    <dialog id="modal-pago-6">
+        <h4 style="text-align: center; margin-bottom:15px;">Método de Pago</h4>
+        <form method="dialog">
+            <div class="form-grupo"><label>Número de Tarjeta</label><input type="text" placeholder="0000 0000 0000 0000" required></div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;"><div class="form-grupo"><label>Expiración</label><input type="text" placeholder="MM/AA" required></div><div class="form-grupo"><label>CVV</label><input type="password" placeholder="123" required></div></div>
+            <button type="submit" class="btn-modal" onclick="setTimeout(() => document.getElementById('modal-envio-6').showModal(), 50)">Siguiente: Envío</button>
+            <button type="button" class="btn-cerrar" onclick="this.closest('dialog').close()">Salir / Cancelar</button>
+        </form>
+    </dialog>
+    <dialog id="modal-envio-6">
+        <h4 style="text-align: center; margin-bottom:15px;">Datos de Envío</h4>
+        <form method="dialog">
+            <div class="form-grupo"><label>Nombre Completo</label><input type="text" required></div><div class="form-grupo"><label>Calle y Número</label><input type="text" required></div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;"><div class="form-grupo"><label>Código Postal</label><input type="text" required></div><div class="form-grupo"><label>Ciudad</label><input type="text" required></div></div>
+            <button type="submit" class="btn-modal" onclick="setTimeout(() => document.getElementById('modal-exito-6').showModal(), 50)">Finalizar Compra</button>
+            <button type="button" class="btn-cerrar" onclick="this.closest('dialog').close()">Salir / Cancelar</button>
+        </form>
+    </dialog>
+    <dialog id="modal-exito-6"><div style="text-align: center;"><span style="font-size: 40px; color: #27ae60;">✓</span><h4>¡Compra Realizada!</h4><p style="font-size:14px; color:#666; margin-bottom:10px;">Tu orden fue procesada.</p><form method="dialog"><button class="btn-modal" style="background-color: #27ae60;">Aceptar y Salir</button></form></div></dialog>
+
+
+    <footer>
+        <p>&copy; 2026 Black Caps. Todos los derechos reservados. | <a href="index.html" style="color: #666;">Volver al Inicio</a></p>
+    </footer>
+</body>
+</html>
